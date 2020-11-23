@@ -48,4 +48,35 @@ object HotcellUtils {
   }
 
   // YOU NEED TO CHANGE THIS PART
+  /*
+  * Function to calculate Getis Ord score
+  * */
+  def computeAdjacentCells(x: Int, minX: Int, maxX: Int, y: Int, minY: Int, maxY:Int, z:Int, minZ:Int, maxZ: Int): Double = {
+    var count = 0
+    if (x == minX || x == maxX) {
+      count += 1
+    }
+
+    if (y == minY || y == maxY) {
+      count += 1
+    }
+
+    if (z == minZ || z == maxZ) {
+      count += 1
+    }
+
+    count match {
+      case 1 => 18
+      case 2 => 12
+      case 3 => 8
+      case _ => 27
+    }
+  }
+
+  def calculateGISScore(stdDev: Double, mean:Double, weight: Int, numCells: Int, x:Int, y:Int, z:Int, minX: Int, minY: Int, minZ: Int, maxX: Int, maxY: Int, maxZ: Int): Double =
+  {
+    val neighborCount = computeAdjacentCells(x, minX, maxX, y, minY, maxY, z, minZ, maxZ)
+    return  (weight.toDouble-(mean*neighborCount))/(stdDev*Math.sqrt((numCells*neighborCount - neighborCount*neighborCount)/(numCells-1.0)))
+
+  }
 }

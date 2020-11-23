@@ -1,0 +1,21 @@
+[info] Loading global plugins from C:\Users\pshub\.sbt\1.0\plugins
+[info] Loading settings for project cse512-project-hotspot-analysis-template-build from plugins.sbt ...
+[info] Loading project definition from C:\Users\pshub\Downloads\CSE512-Project-Hotspot-Analysis-Template\CSE512-Project-Hotspot-Analysis-Template\project
+[info] Loading settings for project root from build.sbt ...
+[info] Set current project to CSE512-Hotspot-Analysis-Template (in build file:/C:/Users/pshub/Downloads/CSE512-Project-Hotspot-Analysis-Template/CSE512-Project-Hotspot-Analysis-Template/)
+[info] Including from cache: scala-library-2.11.11.jar
+[info] ScalaTest
+[info] Run completed in 42 milliseconds.
+[info] Total number of tests run: 0
+[info] Suites: completed 0, aborted 0
+[info] Tests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0
+[info] No tests were executed.
+[info] Checking every *.class/*.jar file's SHA-1.
+[info] Merging files...
+[warn] Merging 'META-INF\MANIFEST.MF' with strategy 'discard'
+[warn] Strategy 'discard' was applied to a file
+[info] Assembly up to date: C:\Users\pshub\Downloads\CSE512-Project-Hotspot-Analysis-Template\CSE512-Project-Hotspot-Analysis-Template\target\scala-2.11\CSE512-Hotspot-Analysis-Template-assembly-0.1.0.jar
+[success] Total time: 3 s, completed 22 Nov, 2020 11:45:01 PM
+[error] Expected ';'
+[error] CSE512-Hotspot-Analysis-Template-assembly-0.1.0.jar
+[error]                                                    ^

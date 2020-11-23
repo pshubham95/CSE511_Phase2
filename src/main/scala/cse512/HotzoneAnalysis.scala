@@ -12,6 +12,8 @@ object HotzoneAnalysis {
 
   def runHotZoneAnalysis(spark: SparkSession, pointPath: String, rectanglePath: String): DataFrame = {
 
+    println("running hot zone analysis");
+
     var pointDf = spark.read.format("com.databricks.spark.csv").option("delimiter",";").option("header","false").load(pointPath);
     pointDf.createOrReplaceTempView("point")
 
@@ -31,7 +33,11 @@ object HotzoneAnalysis {
 
     // YOU NEED TO CHANGE THIS PART
 
-    return joinDf // YOU NEED TO CHANGE THIS PART
+    val orderedResult = spark.sql("select rectangle, count(*) as count from joinResult group by rectangle order by rectangle")
+
+    val singlePartition =orderedResult.coalesce(1)
+
+    return singlePartition
   }
 
 }
